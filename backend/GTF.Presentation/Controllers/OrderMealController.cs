@@ -1,5 +1,4 @@
 using GFT.Application.Protocols;
-using GFT.Application.UseCases;
 using GTF.Presentation.Inputs;
 using GTF.Presentation.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -20,13 +19,19 @@ namespace GTF.Presentation.Controllers
         [HttpPost]
         public ActionResult<OrderMealResponse> Post([FromBody] OrderMealRequest request)
         {
-            var useCaseResponse = _orderMealUseCase.Execute(request.Input);
-            if (useCaseResponse.Errors.Any())
+            try
             {
-                return BadRequest();
-            }
+                var useCaseResponse = _orderMealUseCase.Execute(request.Input);
+                if (useCaseResponse.Errors.Any())
+                {
+                    return BadRequest(useCaseResponse.Errors);
+                }
 
-            return Ok();
+                return Ok();
+            } catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred. {ex.Message}");
+            }
         }
     }
 }

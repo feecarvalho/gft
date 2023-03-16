@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTF.Presentation", "GTF.Pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.Application", "GFT.Application\GFT.Application.csproj", "{66E6260F-257C-4644-B551-1468DB5D9DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.Domain", "GFT.Domain\GFT.Domain.csproj", "{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
