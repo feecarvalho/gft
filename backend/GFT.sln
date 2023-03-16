@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.Tests", "GFT.Tests\GFT.Tests.csproj", "{8E2F645C-3903-43CB-A6FA-BF36DA14BC39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTF.Presentation", "GTF.Presentation\GTF.Presentation.csproj", "{C72B90F5-D42D-46FC-BC35-C7A48E580296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.Application", "GFT.Application\GFT.Application.csproj", "{66E6260F-257C-4644-B551-1468DB5D9DCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8E2F645C-3903-43CB-A6FA-BF36DA14BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E2F645C-3903-43CB-A6FA-BF36DA14BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E2F645C-3903-43CB-A6FA-BF36DA14BC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72B90F5-D42D-46FC-BC35-C7A48E580296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72B90F5-D42D-46FC-BC35-C7A48E580296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72B90F5-D42D-46FC-BC35-C7A48E580296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72B90F5-D42D-46FC-BC35-C7A48E580296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E6260F-257C-4644-B551-1468DB5D9DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
