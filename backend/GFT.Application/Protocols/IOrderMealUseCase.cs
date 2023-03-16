@@ -2,8 +2,7 @@
 
 namespace GFT.Application.Protocols
 {
-    public interface IOrderMealUseCase
+    public interface IOrderMealUseCase : IUseCase<UseCaseResult<string>, string>
     {
-        public UseCaseResult<string> Execute(string input);
     }
 }

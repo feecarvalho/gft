@@ -1,3 +1,4 @@
+using GFT.Application.Protocols;
 using GFT.Application.UseCases;
 using GTF.Presentation.Inputs;
 using GTF.Presentation.Responses;
@@ -9,11 +10,17 @@ namespace GTF.Presentation.Controllers
     [Route("[controller]")]
     public class OrderMealController : ControllerBase
     {
+        private readonly IOrderMealUseCase _orderMealUseCase;
+
+        public OrderMealController(IOrderMealUseCase orderMealUseCase)
+        {
+            _orderMealUseCase = orderMealUseCase;
+        }
+
         [HttpPost]
         public ActionResult<OrderMealResponse> Post([FromBody] OrderMealRequest request)
         {
-            var useCase = new OrderMealUseCase();
-            var useCaseResponse = useCase.Execute(request.Input);
+            var useCaseResponse = _orderMealUseCase.Execute(request.Input);
             if (useCaseResponse.Errors.Any())
             {
                 return BadRequest();
