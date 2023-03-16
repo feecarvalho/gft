@@ -20,5 +20,6 @@ namespace GFT.Application.Results
         public static UseCaseResult<T> Success(T value) => new(value);
         public IEnumerable<string> Errors { get; private set; } = new List<string>();
         public static UseCaseResult<T> Invalid(string validationError) => new(ResultStatus.Invalid) { Errors = new List<string> { validationError } };
+        public static UseCaseResult<T> Invalid(List<string> validationErrors) => new(ResultStatus.Invalid) { Errors = validationErrors };
     }
 }

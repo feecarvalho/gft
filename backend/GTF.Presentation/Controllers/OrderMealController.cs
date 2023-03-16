@@ -27,7 +27,7 @@ namespace GTF.Presentation.Controllers
                     return BadRequest(useCaseResponse.Errors);
                 }
 
-                return Ok();
+                return Ok(useCaseResponse.GetValue());
             } catch (Exception ex)
             {
                 return StatusCode(500, $"An error occurred. {ex.Message}");
