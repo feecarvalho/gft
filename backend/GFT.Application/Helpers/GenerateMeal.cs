@@ -17,10 +17,10 @@ namespace GFT.Application.Validators
         private static Dictionary<int, string> GenerateMorningDishes(List<string> options)
         {
             var dishes = new Dictionary<int, string>();
-
+            var coffeeCounter = 0;
             foreach (var option in options)
             {
-                if (dishes.ContainsKey(4)) return dishes;
+                if (dishes.ContainsKey(5)) break;
 
                 switch (option.Trim())
                 {
@@ -34,27 +34,28 @@ namespace GFT.Application.Validators
 
                     case "3":
                         AddDish(dishes, 3, "coffee", true);
+                        coffeeCounter++;
                         break;
 
                     case "4":
-                        AddDish(dishes, 4, "error");
+                        AddDish(dishes, 5, "error");
                         break;
 
                     default:
-                        AddDish(dishes, 4, "error");
+                        AddDish(dishes, 5, "error");
                         break;
                 }
             }
-            FixDuplications(dishes, options, "3", "coffe");
+            FixDuplications(dishes, coffeeCounter, "3", "coffe");
             return dishes;
         }
         private static Dictionary<int, string> GenerateNightDishes(List<string> options)
         {
             var dishes = new Dictionary<int, string>();
-
+            var potatoesCounter = 0;
             foreach (var option in options)
             {
-                if (dishes.ContainsKey(5)) return dishes;
+                if (dishes.ContainsKey(5)) break;
 
                 switch (option.Trim())
                 {
@@ -64,6 +65,7 @@ namespace GFT.Application.Validators
 
                     case "2":
                         AddDish(dishes, 2, "potato", true);
+                        potatoesCounter++;
                         break;
 
                     case "3":
@@ -79,7 +81,7 @@ namespace GFT.Application.Validators
                         break;
                 }
             }
-            FixDuplications(dishes, options, "2", "potato");
+            FixDuplications(dishes, potatoesCounter, "2", "potato");
             return dishes;
         }
 
@@ -96,14 +98,13 @@ namespace GFT.Application.Validators
             return;
         }
 
-        private static void FixDuplications(Dictionary<int, string> dishes, List<string> options, string key, string dish)
+        private static void FixDuplications(Dictionary<int, string> dishes, int counter, string key, string dish)
         {
-            int counter = options.Count(d => d == key);
-            if (counter > 1)
-            {
-                dishes.Remove(Convert.ToInt32(key));
-                dishes.Add(Convert.ToInt32(key), $"{dish}(x{counter})");
-            }
+            if (counter <= 1)
+                return;
+
+            dishes.Remove(Convert.ToInt32(key));
+            dishes.Add(Convert.ToInt32(key), $"{dish}(x{counter})");
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GTF.Presentation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] OrderMealRequest request)
+        public ActionResult<string> Post([FromBody] OrderMealRequest request)
         {
             try
             {
