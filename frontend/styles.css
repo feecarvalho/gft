@@ -84,7 +84,7 @@ h1 strong {
 }
 
 .order {
-  margin: 0 auto;
+  margin: 280px auto 0 auto;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -119,8 +119,48 @@ h1 strong {
   margin-top: 2rem;
   border-top: 1px solid  #C1C1C1;
   padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #previous-orders span {
   font-size: 1.25rem;
+}
+
+#previous-orders ul {
+  display: block;
+  height: 300px;
+  overflow-y: auto;
+  width: 300px;
+  list-style: none;
+  padding: 0;
+}
+
+#previous-orders li::before {
+  content: "";
+  display: flex;
+  width: 70px;
+  height: 0px;
+  border-top: 1px solid #C1C1C1;
+  padding-bottom: 8px;
+  margin: 8px auto 0;
+}
+
+::-webkit-scrollbar
+{
+  width: 2px;  /* for vertical scrollbars */
+  height: 2px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
 }
