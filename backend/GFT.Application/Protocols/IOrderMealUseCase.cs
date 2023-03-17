@@ -2,7 +2,7 @@
 
 namespace GFT.Application.Protocols
 {
-    public interface IOrderMealUseCase : IUseCase<UseCaseResult<Dictionary<string, string>>, string>
+    public interface IOrderMealUseCase : IUseCase<UseCaseResult<string>, string>
     {
     }
 }

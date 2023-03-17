@@ -1,6 +1,7 @@
 using GFT.Application.Protocols;
 using GTF.Presentation.Inputs;
 using GTF.Presentation.Responses;
+using GTF.Presentation.Validators;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GTF.Presentation.Controllers
@@ -21,12 +22,10 @@ namespace GTF.Presentation.Controllers
         {
             try
             {
+                var errors = OrderMealValidator.ValidateOrder(request);
+                if (errors.Any()) return BadRequest(errors);
                 var useCaseResponse = _orderMealUseCase.Execute(request.Input);
-                if (useCaseResponse.Errors.Any())
-                {
-                    return BadRequest(useCaseResponse.Errors);
-                }
-
+                if (useCaseResponse.Errors.Any()) return BadRequest(useCaseResponse.Errors);
                 return Ok(useCaseResponse.GetValue());
             } catch (Exception ex)
             {

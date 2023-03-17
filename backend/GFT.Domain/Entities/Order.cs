@@ -12,12 +12,5 @@ namespace GFT.Domain.Entities
             DayTime = dayTime;
             Requests = requests;
         }
-
-        public Order(string input) 
-        {
-            var order = input.Split(',');
-            DayTime = new DayTime(order[0]);
-            Requests = new List<string>(order.Skip(1));
-        }
     }
 }
