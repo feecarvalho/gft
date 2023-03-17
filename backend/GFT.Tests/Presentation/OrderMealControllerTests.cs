@@ -54,4 +54,20 @@ public class OrderMealControllerTests
 
         Assert.Equal(400, httpResult?.StatusCode);
     }
+
+
+    [Fact]
+    public void Should_Return_400_If_Invalid_Day_Time_Was_Provided()
+    {
+        var sut = MakeSut();
+        var request = new OrderMealRequest
+        {
+            Input = "afternoon,1,2,3,4"
+        };
+        var result = sut.OrderMealController.Post(request);
+        var httpResult = result.Result as ObjectResult;
+
+        Assert.Equal(400, httpResult?.StatusCode);
+        Assert.Equal("Day time must be 'morning' or 'night'", httpResult?.Value);
+    }
 }
