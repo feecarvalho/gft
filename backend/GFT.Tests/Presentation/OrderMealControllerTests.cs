@@ -19,7 +19,7 @@ public class OrderMealControllerTests
     {
         public UseCaseResult<string> Execute(string input)
         {
-            return new UseCaseResult<string>("");
+            return new UseCaseResult<string>("eggs,toast,coffee(x3)");
         }
     }
 
@@ -99,5 +99,20 @@ public class OrderMealControllerTests
 
         Assert.Equal(500, httpResult?.StatusCode);
         Assert.Equal($"An error occurred. Exception of type 'System.Exception' was thrown.", httpResult?.Value);
+    }
+
+    [Fact]
+    public void Should_Return_200_If_Success()
+    {
+        var sut = MakeSut();
+        var request = new OrderMealRequest
+        {
+            Input = "morning,1,2,3,3,3",
+        };
+        var result = sut.OrderMealController.Post(request);
+        var httpResult = result.Result as ObjectResult;
+
+        Assert.Equal(200, httpResult?.StatusCode);
+        Assert.Equal("eggs,toast,coffee(x3)", httpResult?.Value);
     }
 }
