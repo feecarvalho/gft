@@ -1,9 +1,12 @@
 ﻿using GFT.Application.Protocols;
 using GFT.Application.Results;
 using GTF.Presentation.Controllers;
+using GTF.Presentation.Inputs;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 
 namespace GFT.Tests.Presentation;
+
 
 public class OrderMealControllerTests
 {
@@ -36,5 +39,19 @@ public class OrderMealControllerTests
             OrderMealController = sut,
             OrderMealUseCaseStub = useCase
         };
+    }
+
+    [Fact]
+    public void Should_Return_400_If_Empty_Input()
+    {
+        var sut = MakeSut();
+        var request = new OrderMealRequest
+        {
+            Input = ""
+        };
+        var result = sut.OrderMealController.Post(request);
+        var httpResult = result.Result as ObjectResult;
+
+        Assert.Equal(400, httpResult?.StatusCode);
     }
 }
