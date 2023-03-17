@@ -24,7 +24,7 @@ const requestOrder = async (order) => {
     const listItem = document.createElement("li")
     listItem.innerHTML = result.output
     previousOrderList.appendChild(listItem)
-    console.log(previousOrderList)
   } catch(error) {
+    console.log(error)
   }
 }
