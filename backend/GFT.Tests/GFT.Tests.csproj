@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GTF.Presentation\GTF.Presentation.csproj" />
+    <ProjectReference Include="..\GTF.Presentation\GFT.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

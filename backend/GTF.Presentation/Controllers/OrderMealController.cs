@@ -1,6 +1,5 @@
 using GFT.Application.Protocols;
 using GTF.Presentation.Inputs;
-using GTF.Presentation.Responses;
 using GTF.Presentation.Validators;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +17,7 @@ namespace GTF.Presentation.Controllers
         }
 
         [HttpPost]
-        public ActionResult<OrderMealResponse> Post([FromBody] OrderMealRequest request)
+        public ActionResult Post([FromBody] OrderMealRequest request)
         {
             try
             {

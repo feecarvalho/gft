@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.Tests", "GFT.Tests\GFT.Tests.csproj", "{8E2F645C-3903-43CB-A6FA-BF36DA14BC39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTF.Presentation", "GTF.Presentation\GTF.Presentation.csproj", "{C72B90F5-D42D-46FC-BC35-C7A48E580296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.Presentation", "GTF.Presentation\GFT.Presentation.csproj", "{C72B90F5-D42D-46FC-BC35-C7A48E580296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.Application", "GFT.Application\GFT.Application.csproj", "{66E6260F-257C-4644-B551-1468DB5D9DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.Application", "GFT.Application\GFT.Application.csproj", "{66E6260F-257C-4644-B551-1468DB5D9DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GFT.Domain", "GFT.Domain\GFT.Domain.csproj", "{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GFT.Domain", "GFT.Domain\GFT.Domain.csproj", "{DDCA5C7A-7071-4694-8D46-CC7FF807BE94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
