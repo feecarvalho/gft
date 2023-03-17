@@ -16,13 +16,19 @@
 
 <h2 id="how-to-run">⚙️ How to run</h2>
 
-* 1 - Run the Presentation Web API project and with:
+* 1 - Build the project at `/backend` with:
+
+```
+dotnet build
+```
+
+* 2 - Run the Presentation Web API project at `/GTF.Presentation` with:
 
 ```
 dotnet run
 ```
 
-* 2 - Open the `index.html` file located at: `/frontend/index.html`
+* 3 - Open the `index.html` file located at: `/frontend`
 
 <hr>
 
