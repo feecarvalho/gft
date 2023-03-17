@@ -7,7 +7,6 @@ using Moq;
 
 namespace GFT.Tests.Presentation;
 
-
 public class OrderMealControllerTests
 {
     public class SutTypes
@@ -71,7 +70,6 @@ public class OrderMealControllerTests
         Assert.Equal("Day time must be 'morning' or 'night'", httpResult?.Value);
     }
 
-
     [Fact]
     public void Should_Call_OrderMealUseCase_With_Correct_OrderInput()
     {
@@ -84,5 +82,22 @@ public class OrderMealControllerTests
         var result = sut.Post(request);
         var httpResult = result.Result as ObjectResult;
         useCaseMock.Verify(m => m.Execute(It.Is<string>(o => o == "morning,1,2,3,3,3,3,3")), request.Input);
+    }
+
+    [Fact]
+    public void Should_Return_500_If_OrderMealUseCase_Throws()
+    {
+        var useCaseMock = new Mock<IOrderMealUseCase>();
+        useCaseMock.Setup(u => u.Execute(It.Is<string>(s => s == "morning,1,2,3,3,3,3,3"))).Throws(new Exception());
+        var sut = new OrderMealController(useCaseMock.Object);
+        var request = new OrderMealRequest
+        {
+            Input = "morning,1,2,3,3,3,3,3",
+        };
+        var result = sut.Post(request);
+        var httpResult = result.Result as ObjectResult;
+
+        Assert.Equal(500, httpResult?.StatusCode);
+        Assert.Equal($"An error occurred. Exception of type 'System.Exception' was thrown.", httpResult?.Value);
     }
 }
