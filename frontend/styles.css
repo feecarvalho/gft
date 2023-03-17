@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+nav {
+  height: 100vh;
+  width: 600px;
+  overflow: hidden;
+}
+
+img {
+  left: -107px;
+  position: relative;
+}
+
+main {
+  display: flex;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  flex-grow: 1;
+}
+
+#header {
+  padding: 8px 50px;
+}
+
+h1 {
+  border-bottom: 12px solid #14254c;
+  font-size: 36px;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  margin-top: 24px;
+  font-weight: 700;
+  text-align: end;
+  color: cadetblue;
+}
+
+h1 strong {
+  color: #14254c;
+}
+
+#orders {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70%;
+}
+
+.order {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column
+}
+
+.order p {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.order input, 
+.order button {
+  width: 300px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #C1C1C1;
+  min-height: 40px;
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+
+.order button:hover {
+  background: cadetblue;
+  transition: 0.3s ease;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#previous-orders {
+  margin-top: 2rem;
+  border-top: 1px solid  #C1C1C1;
+  padding-top: 1rem;
+}
+
+#previous-orders span {
+  font-size: 1.25rem;
+}
