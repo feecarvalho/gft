@@ -13,7 +13,7 @@
 <body>
   <main>
     <nav>
-      <img src="https://www.lecremedelacrumb.com/wp-content/uploads/2019/03/steak-potatoes-skillet-3.jpg" alt="">
+      <img src="./assets/background-image.jpg" alt="">
     </nav>
     <section id="container">
       <section id="header">
@@ -21,18 +21,19 @@
       </section>
       <section id="orders">
         <div class="order">
-          <p>Please, make your order below!</p>
-          <input type="text" placeholder="Your order goes here!">
-          <button type="submit">Order now!</button>
+          <p>Please, make your order below</p>
+          <input id="order-input" type="text" placeholder="Your order goes here!">
+          <button id="make-order" onclick="handleOrder()" type="submit">Order now</button>
+          <span id="invalid-order-error"></span>
         </div>
         <div id="previous-orders">
           <span>Previous orders</span>
           <ul id="previous-orders-list">
-            <li>No orders found.</li>
           </ul>
         </div>
       </section>
     </section>
   </main>
 </body>
+<script src="./script.js"></script>
 </html>
