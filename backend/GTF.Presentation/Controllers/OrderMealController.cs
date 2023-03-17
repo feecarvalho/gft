@@ -23,9 +23,11 @@ namespace GTF.Presentation.Controllers
             try
             {
                 var errors = OrderMealValidator.ValidateOrder(request);
-                if (errors.Any()) return BadRequest(errors);
+                if (errors.Any()) 
+                    return BadRequest(string.Join(";",errors));
                 var useCaseResponse = _orderMealUseCase.Execute(request.Input);
-                if (useCaseResponse.Errors.Any()) return BadRequest(useCaseResponse.Errors);
+                if (useCaseResponse.Errors.Any()) 
+                    return BadRequest(useCaseResponse.Errors);
                 return Ok(useCaseResponse.GetValue());
             } catch (Exception ex)
             {
