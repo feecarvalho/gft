@@ -70,4 +70,19 @@ public class OrderMealControllerTests
         Assert.Equal(400, httpResult?.StatusCode);
         Assert.Equal("Day time must be 'morning' or 'night'", httpResult?.Value);
     }
+
+
+    [Fact]
+    public void Should_Call_OrderMealUseCase_With_Correct_OrderInput()
+    {
+        var useCaseMock = new Mock<IOrderMealUseCase>();
+        var sut = new OrderMealController(useCaseMock.Object);
+        var request = new OrderMealRequest
+        {
+            Input = "morning,1,2,3,3,3,3,3",
+        };
+        var result = sut.Post(request);
+        var httpResult = result.Result as ObjectResult;
+        useCaseMock.Verify(m => m.Execute(It.Is<string>(o => o == "morning,1,2,3,3,3,3,3")), request.Input);
+    }
 }
